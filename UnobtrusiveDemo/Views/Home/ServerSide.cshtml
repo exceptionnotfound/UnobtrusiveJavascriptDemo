@@ -1,0 +1,36 @@
+﻿@model UnobtrusiveDemo.ViewModels.Home.AddUserVM
+
+@{
+    ViewBag.Title = "Add a User (Server-Side)";
+}
+
+<h2>Add a User (Server-Side Validation)</h2>
+
+@using (Html.BeginForm())
+{
+    <div>
+        <div>
+            @Html.LabelFor(x => x.FirstName)
+            @Html.TextBoxFor(x => x.FirstName)
+            @Html.ValidationMessageFor(x => x.FirstName)
+        </div>
+        <div>
+            @Html.LabelFor(x => x.LastName)
+            @Html.TextBoxFor(x => x.LastName)
+            @Html.ValidationMessageFor(x => x.LastName)
+        </div>
+        <div>
+            @Html.LabelFor(x => x.Age)
+            @Html.TextBoxFor(x => x.Age)
+            @Html.ValidationMessageFor(x => x.Age)
+        </div>
+        <div>
+            @Html.LabelFor(x => x.EmailAddress)
+            @Html.TextBoxFor(x => x.EmailAddress)
+            @Html.ValidationMessageFor(x => x.EmailAddress)
+        </div>
+        <div>
+            <input type="submit" value="Save" />
+        </div>
+    </div>
+}
